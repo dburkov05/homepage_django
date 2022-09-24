@@ -1,0 +1,14 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <header>
+            <a href="{% url 'home' %}">Home</a>
+        </header>
+        
+        {% block content %}
+        {% endblock content %}
+    </body>
+</html>
