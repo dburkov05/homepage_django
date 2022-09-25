@@ -1,6 +1,44 @@
 <!-- templates/home.html -->
 {% extends 'base.html' %}
- 
+
+{% load static %}
+
+{% block head %}
+<style>
+.tech_modal {
+    color: lime;
+    padding: 1rem;
+    text-align: center;
+    width: 400px;
+    /*background:linear-gradient(-45deg, transparent 10px, rgb(125, 125, 125, 0.7) 0);*/
+    border: bold;
+    background-color: rgb(125, 125, 125, 0.7);
+    clip-path: polygon(20px 0,100% 0,100% calc(100% - 20px), calc(100% - 20px) 100%,0 100%,0 20px);
+}
+</style>
+{% endblock %}
+
+{% block modal %}
+<div class='tech_modal polygon'>
+     {{ block.super }}
+</div>
+{% endblock %}
+
+{% block header %}
+<h1>{{about.surname}} {{about.name}}</h1>
+{% endblock %}
+
 {% block content %}
-<h1>Homepage</h1>
-{% endblock content %}
+Основной контент страницы
+<div class='triangle'></div>
+{% endblock %}
+
+{% block some_text_block %}
+Super text
+{% endblock%}
+
+{% block footer %}
+Подвал
+{% endblock %}
+
+

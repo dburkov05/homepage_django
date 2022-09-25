@@ -3,3 +3,9 @@ from django.views.generic import TemplateView
 
 class HomePageView(TemplateView):
     template_name = 'home.html'
+    extra_context = {
+            'about': {
+                'name': 'Денис',
+                'surname': 'Бурков'
+            }
+    }
