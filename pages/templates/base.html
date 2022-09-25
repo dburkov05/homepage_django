@@ -3,25 +3,17 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>Домашняя страница</title>
-        {% block head %}
-        {% endblock %}
+        {% block head %}{% endblock %}
     </head>
     <body>
-        <header>
-            {% block header %}
-            {% endblock %}
-        </header>
-
-        {% block modal %}
-            {% block some_text_block %}
-            {% endblock %}
-        {% endblock %}
-        
-        {% block content %}{% endblock %}
+        {% block header_menu %}{% endblock %}
+        {% block header %}{% endblock %}
+        <main>
+            {% block about %}{% endblock %}
+            {% block portfolio %}{% endblock %}
+        </main>
         <footer>
-            {% block footer %}
-            {% endblock %}
+            {% block footer %}{% endblock %}
         </footer>
     </body>
 </html>

@@ -4,38 +4,95 @@
 {% load static %}
 
 {% block head %}
+
+<title>Домашняя страница</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<!-- <link rel="preload" href="{% static 'Dirtchunk.otf'%}" as="font">
+<link rel="preload" href="{% static 'BlenderPro-Book.woff'%}" as="font"> -->
+<link rel="stylesheet" type="text/css" href="{% static 'main.css'%}">
 <style>
-.tech_modal {
-    color: lime;
-    padding: 1rem;
-    text-align: center;
-    width: 400px;
-    /*background:linear-gradient(-45deg, transparent 10px, rgb(125, 125, 125, 0.7) 0);*/
-    border: bold;
-    background-color: rgb(125, 125, 125, 0.7);
-    clip-path: polygon(20px 0,100% 0,100% calc(100% - 20px), calc(100% - 20px) 100%,0 100%,0 20px);
+.header {
+    background-image: url({% static 'header_img.jpg'%});
+    height: 100vh;
+}
+body {
+  scroll-behavior: smooth;
 }
 </style>
 {% endblock %}
 
-{% block modal %}
-<div class='tech_modal polygon'>
-     {{ block.super }}
-</div>
+{% block header_menu %}
+<nav class="navbar navbar-expand-lg fixed-top ">
+    <a class="navbar-brand" href="#">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+        <ul class="navbar-nav mr-4">
+            {% for elem in menu %}
+            <li class="nav-item">
+                <a class="nav-link" href="{{elem.url}}">{{elem.text}}</a>
+            </li>
+            {% endfor%}
+        </ul>
+    </div>
+</nav>
 {% endblock %}
 
 {% block header %}
-<h1>{{about.surname}} {{about.name}}</h1>
-{% endblock %}
-
-{% block content %}
-Основной контент страницы
-<div class='triangle'></div>
-{% endblock %}
-
-{% block some_text_block %}
-Super text
+<header class="header">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="description text-center">
+            <h3>
+                <font color="#F97300">
+                    <span>▍Добро пожаловать на мою домашнюю страницу!</span>
+                    <p>Данный сайт создан исключительно для отбора в Яндекс.Интенсив</p>
+                    <button class="btn btn-outline-secondary">See more</button>
+                </font>
+            </h3>
+        </div>
+    </div>
+</header>
 {% endblock%}
+
+{% block about %}
+<div class="about">
+    <a name='about'></a>
+<div class="container">
+	  <h1 class="text-center">Обо мне</h1>
+<div class="row">
+   <div class="col-lg-4 col-md-4 col-sm-12">
+       <img align="center" src="{% static about.photo %}" class="img-fluid">
+   </div>
+   <div class="col-lg-8 col-md-8 col-sm-12 desc">
+     
+       <h3><font color="#F97300">▍{{about.fullname}}</font></h3>
+       <p>{{about.text}}</p>
+   </div>
+  </div>
+</div>
+</div>
+{% endblock %}
+
+{% block portfolio %}
+<div class="portfolio">
+     <h1 class="text-center">Portfolio</h1>
+ <div class="container">
+  <div class="row">
+   <div class="col-lg-4 col-md-4 col-sm-12">
+       <a href='https://многодетство.рф/'><img align="center" src="{% static 'site1.png' %}" class="img-fluid"></a>
+   </div>
+   <div class="col-lg-4 col-md-4 col-sm-12">
+    <img align="center" src="images/portfolio/port1.png" class="img-fluid">
+   </div>
+   <div class="col-lg-4 col-md-4 col-sm-12">
+    <img align="center" src="images/portfolio/port6.png" class="img-fluid">
+   </div>
+</div>
+</div>
+</div>
+{% endblock %}
 
 {% block footer %}
 Подвал
