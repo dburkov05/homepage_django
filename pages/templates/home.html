@@ -1,10 +1,7 @@
 <!-- templates/home.html -->
 {% extends 'base.html' %}
-
 {% load static %}
-
 {% block head %}
-
 <title>Домашняя страница</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <!-- <link rel="preload" href="{% static 'Dirtchunk.otf'%}" as="font">
@@ -20,7 +17,6 @@ body {
 }
 </style>
 {% endblock %}
-
 {% block header_menu %}
 <nav class="navbar navbar-expand-lg fixed-top ">
     <a class="navbar-brand" href="#">Home</a>
@@ -38,7 +34,6 @@ body {
     </div>
 </nav>
 {% endblock %}
-
 {% block header %}
 <header class="header">
     <div class="overlay"></div>
@@ -55,56 +50,51 @@ body {
     </div>
 </header>
 {% endblock%}
-
 {% block about %}
 <div class="about">
     <a name='about'></a>
-<div class="container">
-	  <h1 class="text-center">Обо мне</h1>
-<div class="row">
-   <div class="col-lg-4 col-md-4 col-sm-12">
-       <img align="center" src="{% static about.photo %}" class="img-fluid">
-   </div>
-   <div class="col-lg-8 col-md-8 col-sm-12 desc">
-     
-       <h3><font color="#F97300">▍{{about.fullname}}</font></h3>
-       <p>{{about.text}}</p>
-   </div>
-  </div>
-</div>
+    <div class="container">
+        <h1 class="text-center">Обо мне</h1>
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <img align="center" src="{% static about.photo %}" class="img-fluid">
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-12 desc">
+                <h3><font color="#F97300">▍{{about.fullname}}</font></h3>
+                <p>{{about.text}}</p>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}
-
 {% block portfolio %}
 <div class="portfolio">
     <a name="portfolio"></a>
-     <h1 class="text-center">Портфолио</h1>
- <div class="container">
-  <div class="row">
-   <div class="col-lg-4 col-md-4 col-sm-12">
-       <img align="center" src="{% static 'site1.png' %}" class="img-fluid">
-   </div>
-   <div class="col-lg-4 col-md-4 col-sm-12">
-    <img align="center" src="{% static 'site2.png' %}" class="img-fluid">
-   </div>
-   <div class="col-lg-4 col-md-4 col-sm-12">
-    <img align="center" src="{% static 'site3.png' %}" class="img-fluid">
-   </div>
-</div>
-</div>
+    <h1 class="text-center">Портфолио</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <img align="center" src="{% static 'site1.png' %}" class="img-fluid">
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <img align="center" src="{% static 'site2.png' %}" class="img-fluid">
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <img align="center" src="{% static 'site3.png' %}" class="img-fluid">
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}
-
 {% block footer %}
 <div class="container">
     <a name="contacts"></a>
-  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-    <p class="col-md-4 mb-0 text-muted">© 2022 dburkov05</p>
-
-    <ul class="nav col-md-4 justify-content-end">
-        {% for elem in about.contacts %}
-        <li class="nav-item"><a href="{{ elem.url }}" class="nav-link px-2 text-muted">{{ elem.text }}</a></li>
-      {% endfor %}
-  </footer>
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <p class="col-md-4 mb-0 text-muted">© 2022 dburkov05</p>
+        <ul class="nav col-md-4 justify-content-end">
+            {% for elem in about.contacts %}
+            <li class="nav-item"><a href="{{ elem.url }}" class="nav-link px-2 text-muted">{{ elem.text }}</a></li>
+            {% endfor %}
+    </footer>
 </div>
 {% endblock %}
