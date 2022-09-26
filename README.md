@@ -16,7 +16,7 @@ python3 -m venv venv
 ```
 и войдите в него
 ```sh
-source source venv/bin/activate
+source venv/bin/activate
 ```
 после чего установите зависимости из файла requirements.txt:
 ```sh
