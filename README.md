@@ -36,7 +36,7 @@ python -m venv venv
 ```
 и войдите в него
 ```sh
-source venv\bin\activate.bat
+venv\Scripts\activate
 ```
 после чего установите зависимости из файла requirements.txt:
 ```sh
